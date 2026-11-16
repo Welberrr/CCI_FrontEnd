@@ -1,6 +1,12 @@
-import { Service } from '@angular/core';
-import { environment } from '../../environments/environment.development';
-@Service()
+import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+    providedIn: 'root'
+})
 export class AlunoService {
     private url = environment.apiUrl;
+
+    constructor(private http: HttpClient) { }
 }
